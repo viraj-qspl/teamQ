@@ -1,0 +1,18 @@
+
+
+
+<ion-view title="Hooks | <a href='#tab/list'>List</a>">
+
+    <ion-content has-header="true" has-footer="true" scroll="false">
+     
+	 <google-map center="map.center" zoom="map.zoom" >	 
+       <marker ng-repeat="list in lists.trends" coords="{'latitude':list.lat,'longitude':list.lon}"></marker>
+	 </google-map>
+	 
+	
+	 
+    </ion-content>
+
+	
+	
+</ion-view>

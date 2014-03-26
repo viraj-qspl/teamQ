@@ -1,0 +1,22 @@
+<!-- 
+  This template gets placed in the Pet tab's <ion-nav-view> directive.
+  It was wired up in the app config (app.js) 
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<ion-view title="Trends | <a href='#tab/map-view'>Map</a>">
+  <ion-content has-header="true" has-tabs="true">
+
+	Filter:<input ng-model="search"/>
+  
+    <ion-list>
+
+      <ion-item ng-repeat="list in lists.trends | filter:search" type="item-text-wrap" href="#/tab/hook/{{list.id}}/{{list.type}}">
+            <img ng-src="{{list.image}}" width="50px"/>
+		<h3>{{list.caption}}</h3>
+        <p>{{list.desc1}}</p>	
+
+      </ion-item>     
+    </ion-list>
+  </ion-content>
+</ion-view>
+
