@@ -46,10 +46,31 @@ angular.module('starter.controllers', [])
 			hide();
 		}
 	);		
-	//$scope.lists = returnObject;  
-	
+	//$scope.lists = returnObject; 
 
-	
+
+	$scope.onSuccess = function(position) {
+       
+        $scope.pos= {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            timestamp: position.timestamp
+        }
+		
+		sharedProperties.setProperty($scope.pos);
+		
+    };
+
+     $scope.onError = function(error) {
+     //   alert('code: '    + error.code    + '\n' +
+     //        'message: ' + error.message + '\n');
+		
+	    //alert('In Error Mode');
+		sharedProperties.setProperty('No Data');
+			
+    }
+
+    navigator.geolocation.getCurrentPosition($scope.onSuccess,$scope.onError);
 
 
 })
@@ -100,6 +121,7 @@ angular.module('starter.controllers', [])
 		$scope.loading.hide();
 	  };
  
+	$scope.position = sharedProperties.getProperty();
  
 	show();
 	ListService.query(
@@ -109,30 +131,7 @@ angular.module('starter.controllers', [])
 			hide();
 		}
 	);		
-	
 
- 
-	$scope.onSuccess = function(position) {
-        alert('right here');
-        $scope.pos= {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-            timestamp: position.timestamp
-        }    
-    };
-
-     $scope.onError = function(error) {
-     //   alert('code: '    + error.code    + '\n' +
-     //        'message: ' + error.message + '\n');
-		
-	    alert('In Error Mode');
-		$scope.test = 'hellohellohello';
-			
-    }
-
-    navigator.geolocation.getCurrentPosition($scope.onError,$scope.onError);
-	
-	
  
 })
 

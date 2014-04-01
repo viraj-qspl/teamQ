@@ -20,12 +20,13 @@
 
 	  
 
-			<map style="display:block;height:300px;width:100%;" zoom="1" center="[43.6650000, -79.4103000]"> 
+			<map style="display:block;height:300px;width:100%;" zoom="1" center="[{{position.latitude}}, {{position.longitude}}]"> 
 				<marker ng-repeat="list in lists.trends" position="[{{list.lat}}, {{list.lon}}]"  on-click="showInfoWindow(event, 'marker-info', {caption: '{{list.caption}}',description:'{{list.dessc1}}'})" icon="img/{{list.icon}}-hook.png" ></marker>
 				 <info-window style="display: none;" id="marker-info"> <b>[[caption]]</b><br/>[[description]] </info-window>		
 			</map>
 
-			
+
+
 			
   </div>
   
