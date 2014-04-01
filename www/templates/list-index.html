@@ -3,7 +3,7 @@
   It was wired up in the app config (app.js) 
   The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
 -->
-<ion-view title="Trends | <a href='#tab/map-view'>Map</a>">
+<!--ion-view title="Trends | <a href='#tab/map-view'>Map</a>">
   <ion-content has-header="true" has-tabs="true">
 
 	Filter:<input ng-model="search"/>
@@ -18,5 +18,60 @@
       </ion-item>     
     </ion-list>
   </ion-content>
-</ion-view>
+</ion-view -->
+
+
+
+<header class="bar bar-header bar-custom">
+  <h1 class="title"><strong>Trends</strong><b>&nbsp;|&nbsp;</b><a style="text-decoration:none" href="#/map-view">Map</a></h1>
+</header>
+<div  class="bar bar-subheader item-input-inset custinp">
+  <label class="item-input-wrapper"> <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="search">
+  </label>
+</div>
+
+<ion-content has-subheader="true" has-header="true">
+  <div class="list">
+    <div ng-repeat="list in lists.trends | filter:search" type="item-text-wrap"  class="item item-thumbnail-left listcust"> <img ng-src="{{list.image}}" />
+      <div class="socilicon"><img ng-src="img/{{list.icon}}.png"></div>
+      <a style="text-decoration:none" href="#/hook/{{list.id}}/{{list.type}}"><h3>{{list.caption}}</h3></a>
+      <p>	  
+		  <span ng-if="list.type == 'Twitter' || list.type == 'Foursquare' " class="bluetxt">{{list.date}}</span>
+		  <span ng-if="list.type == 'Yahoo'" class="pinktxt">{{list.date}}</span>
+	  </p>
+	  <p>
+		{{list.desc1}}
+	  </p>
+	  
+    </div>
+
+  </div>
+  
+
+  
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
