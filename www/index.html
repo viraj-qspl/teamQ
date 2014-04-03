@@ -10,7 +10,7 @@
 
     <!-- your app's css -->
     <link href="css/style.css" rel="stylesheet">
-
+	
     <!-- ionic/angularjs scripts -->
     <script src="lib/js/ionic.bundle.js"></script>
 	<script src="lib/js/angular/angular-resource.js"></script>
@@ -36,6 +36,20 @@
     <script src="js/devjs/services.js"></script>
     <script src="js/devjs/controllers.js"></script>
 	
+	
+    <script type="text/javascript" charset="utf-8">
+   document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    
+    function onDeviceReady() {
+      navigator.splashscreen.hide();
+		
+    }
+
+
+    </script>
+
 	
 	
 	

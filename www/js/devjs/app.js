@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','n
 					controller: 'IntroCtrl'
   });
 				
-  $urlRouterProvider.otherwise('/intro'); 
+  $urlRouterProvider.otherwise('/list'); 
 
 })
 
@@ -72,17 +72,4 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','n
         };
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-;
 

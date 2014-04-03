@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 
 // A simple controller that fetches a list of data from a service
-.controller('ListIndexCtrl', function($scope, $ionicLoading, ListService, sharedProperties, $ionicLoading) {
+.controller('ListIndexCtrl', function($scope, ListService, sharedProperties, $ionicLoading) {
   // "Pets" is a service returning mock data (services.js)
  // $scope.pets = ListService.all(); 
 
@@ -122,6 +122,17 @@ angular.module('starter.controllers', [])
 	  };
  
 	$scope.position = sharedProperties.getProperty();
+	
+	//alert($scope.position);
+	
+	if($scope.position == 'No Data')
+	{
+		
+		$scope.position= {
+            latitude: 43.6650000,
+            longitude: -79.4103000,
+        }	
+	}
  
 	show();
 	ListService.query(
