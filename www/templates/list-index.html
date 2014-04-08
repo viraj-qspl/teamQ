@@ -37,8 +37,8 @@
       <div class="socilicon"><img ng-src="img/{{list.icon}}.png"></div>
       <a style="text-decoration:none" href="#/hook/{{list.id}}/{{list.type}}"><h3>{{list.caption}}</h3></a>
       <p>	  
-		  <span ng-if="list.type == 'Twitter' || list.type == 'Foursquare' " class="bluetxt">{{list.date}}</span>
-		  <span ng-if="list.type == 'Yahoo'" class="pinktxt">{{list.date}}</span>
+		  <span ng-if="list.type == 'Twitter' || list.type == 'Foursquare' " class="bluetxt">{{list.At}}</span>
+		  <span ng-if="list.type == 'Yahoo'" class="pinktxt">{{list.At}} </span>
 	  </p>
 	  <p>
 		{{list.desc1}}

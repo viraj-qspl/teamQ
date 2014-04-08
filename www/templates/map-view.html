@@ -1,8 +1,3 @@
-
-
-
-
-
 <header class="bar bar-header bar-custom">
   <h1 class="title"><a style="text-decoration:none" href="#/list">Trends</a><b>&nbsp;|&nbsp;</b><strong>Map</strong></h1>
 </header>
@@ -13,14 +8,14 @@
 </div>
 
 <ion-content has-subheader="true" has-header="true">
-  <div class="list">
+
 	 <!--google-map center="map.center" zoom="map.zoom" >	 
        <marker animation="Animation.BOUNCE" ng-repeat="list in lists.trends" coords="{'latitude':list.lat,'longitude':list.lon}"></marker>
 	 </google-map-->
 
 	  
 
-			<map style="display:block;height:300px;width:100%;" zoom="1" center="[{{position.latitude}}, {{position.longitude}}]"> 
+			<map style="display:block;height:84%;width:100%;" zoom="2" center="[{{position.latitude}}, {{position.longitude}}]"> 
 				<marker ng-repeat="list in lists.trends" position="[{{list.lat}}, {{list.lon}}]"  on-click="showInfoWindow(event, 'marker-info', {caption: '{{list.caption}}',description:'{{list.dessc1}}'})" icon="img/{{list.icon}}-hook.png" ></marker>
 				 <info-window style="display: none;" id="marker-info"> <b>[[caption]]</b><br/>[[description]] </info-window>		
 			</map>
@@ -28,7 +23,7 @@
 
 
 			
-  </div>
+
   
 
  

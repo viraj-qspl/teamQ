@@ -1,0 +1,124 @@
+<!-- angularjs scripts -->
+	
+	
+    
+			
+<header class="bar bar-header bar-custom">
+  <h1 class="title"><strong>{{employee.heading}}</strong></h1>
+</header>
+<ion-content has-header="true">
+  <div class="banner" style="padding-top: 10%;padding-bottom: 2%;width: 100%;height: 50%;margin: 0 auto;">
+    <ul rn-carousel>
+   	     <li >
+				  <img src="{{images[0].picture}}" style="width:90%;" width="300" height="200">
+		</li>
+
+		
+    </ul>
+	
+	<!--<slide-box show-pager="true" does-continue="true" slide-interval="2000" disable-scroll="false">
+        <slide>
+				<img src="{{images[0].picture}}" width="300" height="150">
+        </slide>
+    </slide-box>-->
+	
+	<!-- <slide-box show-pager="true" does-continue="true" slide-interval="5000" disable-scroll="true">
+        <slide>
+            <img src="http://1.bp.blogspot.com/-kXS3MLcpTPw/T4rZBW2p8DI/AAAAAAAABqI/tR5aiO4Cj58/s1600/cows2.jpg">
+        </slide>
+        <slide>
+            <img src="http://i677.photobucket.com/albums/vv137/smileytrucker/cow-toy-car-stuck-head-1259518194w.jpg">
+        </slide>
+        <slide>
+            <img src="http://farm6.staticflickr.com/5226/5663664227_ba5e573930_z.jpg">
+        </slide>
+    </slide-box>-->
+	
+	 <!--<ul rn-carousel rn-carousel-indicator="true">
+        <li class="video" ng-repeat="image in images">
+          <img src="{{image.picture}}" width="300" height="150">
+        </li>
+    </ul>-->
+	
+	<!--<ul rn-carousel rn-carousel-buffered class="page-container" ng-class="{blurred: blurred}">
+        <li ng-repeat="image in images">
+          <!--<div class="page {{ page.tpl }}">
+            <div ng-repeat="item in page.images" ng-click="toggle(item)" ng-class="item.cls">
+              <div class="img loading" lazy-loading-class="loading" lazy-loaded-class="loaded" lazy-background="item.image + '.jpg'">
+                <div class="caption">{{ item.title|words:10 }}</div>
+              </div>
+            </div>
+          </div>-->
+		  <!--<div class="page">
+			<img src="{{image.picture}}" width="300" height="150">
+		  </div>
+        </li>
+      </ul>-->
+   <!-- <ion-list>
+      <ion-item ng-repeat="task in tasks">
+        {{task.title}}
+      </ion-item>
+    </ion-list>
+-->
+
+  </div>
+  <div class="bgpink">
+    <div class="row">
+      <div class="col col-67">
+        <h3 class="titname">{{employee.title}}</h3>
+      </div>
+	  <div ng-if="scope.type == 'foursquare'" class="col"><p class="text-right"><img src="images/mail.png" alt=""> {{employee.checkinsCount}} <img src="img/user.png" alt=""> {{employee.usersCount}} </p></div>	
+      <div class="col">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col" ng-if=" scope.type == 'twitter'">
+        <p> {{employee.location}} </p>
+      </div>
+      <div class="col">
+        <p class="text-right">{{employee.create_time}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="border">
+        <div class="mapcon">
+		
+		
+			<!--<map style="display:block;height:100%;width:100%;" zoom="1" center="[43.6650000, -79.4103000]"> 
+				<!--<marker position="[{{employee.latitude}}, {{employee.longitude}}]"  on-click="showInfoWindow(event, 'marker-info', {caption: '{{employee.title}}',description:'{{employee.description}}'})" icon="img/{{employee.type}}-hook.png" ></marker>
+				 <info-window style="display: none;" id="marker-info"> <b>[[caption]]</b><br/>[[description]] </info-window>
+			</map>	-->									 
+			 
+			 <map zoom="3" center="[43.6650000, -79.4103000]">
+				<marker position="[43.6650000, -79.4103000]" title="Twitter Tweet" on-click="showInfoWindow(event, 'marker-info', {caption: 'Twitter Trend',description:'Twitter Trend'});" icon="img/twitter-hook.png"></marker>
+			  </map>
+			  
+			<!--<google-map center="map.center" zoom="map.zoom" draggable="true">
+
+				<marker coords="[52.52000659999999, 13.404953999999975]"></marker>
+
+			</google-map>-->
+			
+		
+			
+		  </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <h3 class="titname">{{employee.desc}}</h3>
+    </div>
+  </div>
+  
+  <div class="item listcust" ng-if="scope.type == 'yahoo'"> 
+    <p>{{employee.description}}</p>
+  </div>
+  
+  <ion-list ng-if="scope.type != 'yahoo'">
+      <ion-item ng-repeat="tip in tips" class="item item-avatar listcust">
+        <img src="{{tip.url}}"> <p>{{tip.text}}</p>
+      </ion-item>
+    </ion-list>
+	
+</ion-content>

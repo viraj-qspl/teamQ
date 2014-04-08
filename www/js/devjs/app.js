@@ -38,15 +38,20 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers','n
     })
 		
 
-    .state('hook-detail', {
+  /*  .state('hook-detail', {
       url: '/hook/:hookId/:hookType',
       templateUrl: 'templates/hook-detail.html',
       controller: 'HookDetailCtrl'
     })
-
+*/
   // if none of the above states are matched, use this as the fallback
   //$urlRouterProvider.otherwise('/list');
   
+    .state('employee-detail', {
+       url: '/hook/:employeeId/:employeeType',
+       templateUrl: 'templates/employee-detail.html',
+       controller: 'EmployeeDetailCtrl'
+    })  
   
   .state('employee-intro', {
 					url: '/intro',

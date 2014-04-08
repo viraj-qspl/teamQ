@@ -24,4 +24,11 @@ body{background:#9dc23e;}
 
 
 /******************** DEVELOPER CSS *********************/
-.angular-google-map-container { height: 400px; }
+body, ion-nav-view , div.scroll-content, map,.scroll {
+	height:100%;
+} 
+
+.item-input-wrapper input {
+width:80% !important;
+}
+
